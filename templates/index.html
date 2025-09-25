@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}nicholas.photos | gallery{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+    <header>
+        <h1>nico's photospace</h1>
+    </header>
+    <main class="gallery-container">
+        <div class="gallery">
+            {% for image in images %}
+            <div class="gallery-item">
+                <img src="{{ url_for('static', filename='images/' + image) }}" alt="Fotografia por Nicholas" loading="lazy">
+                <div class="overlay"></div>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+    <footer>
+        <p>a place for you to forget about the world</p>
+    </footer>
+</div>
+
+<div id="myModal" class="modal">
+    <span class="close-button">&times;</span>
+    <img class="modal-content" id="img01">
+</div>
+{% endblock %}

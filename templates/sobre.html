@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}nicholas.photos | sobre{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+    <div class="about-page-content">
+        <img src="{{ url_for('static', filename='perfil.png') }}" alt="Foto de Nicholas" class="about-profile-pic">
+        
+        <h2>Sobre Mim</h2>
+        <p>
+            Fotógrafo minimalista explorando a interação entre luz e sombra. 
+            Este espaço é um convite para uma pausa, uma fuga do ruído do mundo através 
+            de imagens que buscam simplicidade e sentimento.
+        </p>
+    </div>
+</div>
+{% endblock %}
