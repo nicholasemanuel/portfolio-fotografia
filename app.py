@@ -3,7 +3,8 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-IMAGE_FOLDER = 'static/images'
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+IMAGE_FOLDER = os.path.join(BASE_DIR, 'static', 'images')
 
 @app.route('/')
 def galeria():
@@ -19,5 +20,6 @@ def galeria():
 def sobre():
     return render_template('sobre.html', active_page='sobre')
 
+# O if __name__ == '__main__' não é usado pela Vercel, mas é bom para testes locais
 if __name__ == '__main__':
     app.run(debug=True)
